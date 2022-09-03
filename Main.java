@@ -12,13 +12,13 @@ public class Main {
     System.out.println ("Результат сравнения 1-го и 2-го объектов: " + rec2.isTheSameRectangle(rec1));
 
 
-    Square sq = new Square(5);//третий объект
-    sq.calculateArea();
-    sq.printArea();
-    sq.printRectangleKind();
-    sq.isTheSameRectangle(rec2);
-    System.out.println ("Результат сравнения 2-го и 3-го объектов: " + sq.isTheSameRectangle(rec2));
-    System.out.println("Результат сравнения 1-го и 3-го объектов: " + sq.isTheSameRectangle(rec1));
+    Rectangle rec3 = new Rectangle(5);//третий объект
+    rec3.calculateArea();
+    rec3.printArea();
+    rec3.printRectangleKind();
+    rec3.isTheSameRectangle(rec2);
+    System.out.println ("Результат сравнения 2-го и 3-го объектов: " + rec3.isTheSameRectangle(rec2));
+    System.out.println("Результат сравнения 1-го и 3-го объектов: " + rec3.isTheSameRectangle(rec1));
 
     }
 }

@@ -1,10 +1,16 @@
 public class Rectangle { //класс с двум€ пол€ми
     double x;
     double y;
+    //private static int createdRectangles = 0;
 
     public Rectangle(double x,double y) { //конструктор, принимающий на вход 2 переменные: размеры пр€моугольника
         this.x = x;
         this.y = y;
+        //createdRectangles++;
+    }
+
+    public Rectangle(double x) {
+        this.x=x;
     }
 
     double calculateArea () { // метод дл€ вычислени€ площади пр€моугольника
