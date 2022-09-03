@@ -1,16 +1,20 @@
 public class Rectangle { //класс с двум€ пол€ми
     double x;
     double y;
-    //private static int createdRectangles = 0;
+    private static int createdRectangles = 0;
+    private final static String RUSSIAN_CLASS_NAME = "ѕр€моугольник";
+    private final static String ENGLISH_CLASS_NAME = "Rectangle";
 
     public Rectangle(double x,double y) { //конструктор, принимающий на вход 2 переменные: размеры пр€моугольника
         this.x = x;
         this.y = y;
-        //createdRectangles++;
+        createdRectangles++;
     }
 
-    public Rectangle(double x) {
+    public Rectangle(double x) { //квадрат - частный случай пр€моугольника
         this.x=x;
+        this.y =x;
+        createdRectangles++;
     }
 
     double calculateArea () { // метод дл€ вычислени€ площади пр€моугольника
@@ -31,11 +35,23 @@ public class Rectangle { //класс с двум€ пол€ми
     }
 
     public boolean isTheSameRectangle (Rectangle rec) { // метод дл€ сравнени€ двух пр€моугольников между собой
-        if (this.x== rec.x && this.y==rec.y) {
+        if (this.x== rec.x && this.y==rec.y || this.x == rec.y && this.y == rec.x) {
             return true;
         }
         else {
             return false;
+        }
+    }
+    public static String printRectanglesCount () { //подсчет созданных пр€моугольников
+        return "¬сего было создано " + createdRectangles + " пр€моугольника";
+    }
+
+    public static String printClassName (boolean printInRussian) { //название фигуры на русском или английском €зыке?
+        if (printInRussian) {
+            return RUSSIAN_CLASS_NAME;
+        }
+        else {
+                return ENGLISH_CLASS_NAME;
         }
     }
 }
