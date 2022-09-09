@@ -1,40 +1,40 @@
-public class Rectangle { //класс с двум€ пол€ми
+public class Rectangle {
     double x;
     double y;
     private static int createdRectangles = 0;
     private final static String RUSSIAN_CLASS_NAME = "ѕр€моугольник";
     private final static String ENGLISH_CLASS_NAME = "Rectangle";
 
-    public Rectangle(double x,double y) { //конструктор, принимающий на вход 2 переменные: размеры пр€моугольника
+    public Rectangle(double x,double y) { //constructor that takes 2 variables as input: the dimensions of the rectangle
         this.x = x;
         this.y = y;
         createdRectangles++;
     }
 
-    public Rectangle(double x) { //квадрат - частный случай пр€моугольника
+    public Rectangle(double x) { //a square is a special case of a rectangle
         this.x=x;
         this.y =x;
         createdRectangles++;
     }
 
-    double calculateArea () { // метод дл€ вычислени€ площади пр€моугольника
+    double calculateArea () { // method for calculating the area of a rectangle
         return x*y;
     }
 
-    public void printArea () { //метод дл€ вывода значени€ площади пр€моугольника
-        System.out.println("ѕлощадь пр€моугольника составл€ет: " + calculateArea());
+    public void printArea () { //method for displaying the area of a rectangle
+        System.out.println("The area of a rectangle is: " + calculateArea());
     }
 
-    public void printRectangleKind () { //метод дл€ вывода названи€ фигуры
+    public void printRectangleKind () { //method for displaying the name of the figure
         if (y==x) {
-            System.out.println ("Ёто квадрат");
+            System.out.println ("It's a square");
         }
         else {
-            System.out.println ("Ёто пр€моугольник");
+            System.out.println ("It's a rectangle");
         }
     }
 
-    public boolean isTheSameRectangle (Rectangle rec) { // метод дл€ сравнени€ двух пр€моугольников между собой
+    public boolean isTheSameRectangle (Rectangle rec) { // method for comparing two rectangles with each other
         if (this.x== rec.x && this.y==rec.y || this.x == rec.y && this.y == rec.x) {
             return true;
         }
@@ -42,11 +42,11 @@ public class Rectangle { //класс с двум€ пол€ми
             return false;
         }
     }
-    public static String printRectanglesCount () { //подсчет созданных пр€моугольников
-        return "¬сего было создано " + createdRectangles + " пр€моугольника";
+    public static String printRectanglesCount () { //counting rectangles created
+        return "Total was created " + createdRectangles + " rectangles";
     }
 
-    public static String printClassName (boolean printInRussian) { //название фигуры на русском или английском €зыке?
+    public static String printClassName (boolean printInRussian) { //the name of the figure in Russian or English?
         if (printInRussian) {
             return RUSSIAN_CLASS_NAME;
         }
